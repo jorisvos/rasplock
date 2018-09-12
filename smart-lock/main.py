@@ -2,6 +2,7 @@ import bluetooth
 import os, sys, signal, subprocess
 
 import variables.colors as c
+import variables.device as d
 
 from sense_hat import SenseHat
 from time import sleep
@@ -65,7 +66,7 @@ if __name__ == '__main__':
         else:
             foundDevice = False
             for addr, name in nearby_devices:
-                if addr == "A0:56:F3:B6:33:24" and name == "iPhone van Joris":
+                if addr == d.deviceMacA and name == d.deviceName:
                     foundDevice = True
                     break
             if foundDevice:
